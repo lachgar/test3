@@ -4,28 +4,15 @@ var port = 3000;
 var stringify = require('json-stringify-safe');
 var csv = require('fast-csv')
 
-
-
-app.post('/app', async (req, res)  => {
+app.get('/app', function (req, res) {
     console.log(stringify(req.query));
     res.send('Hello World!');
     var rows = [req.query];
     var fs = require('fs');
     var csvWriter = require('csv-write-stream');
-    var csvFile = fs.createWriteStream("file.csv", { flags: 'a' });
+    var csvFile = fs.createWriteStream("file.csv", {flags: 'a'});
     csvFile.write('\n');
-    csv.writeToStream(csvFile, rows, { headers: false });
-
-
-
-
-
-//    var o  = {hello: "world", foo: "bar", baz: "ta3co"};
-//    fs.appendFile('file.csv', o, function (err) {
-//        if (err)
-//            console.error('Couldn\'t append the data');
-//        console.log('The data was appended to file!');
-//    });
+    csv.writeToStream(csvFile, rows, {headers: false});
 });
 
 app.listen(port, function () {

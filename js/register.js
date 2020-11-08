@@ -11,7 +11,7 @@ $(document).ready(function ()
     "use strict";
 
     $("#send").click(function () {
-        var x = {'position': $("#position").val(), 'nom': $("#name").val().replace("\n", " "), 'email': $("#email").val().replace("\n", " "), 'phone': $("#phone").val().replace("\n", " "), 'country': $("#country").val().replace("\n", " "),'address': $("#address").val().replace("\n", " "), 'zip': $("#zip").val(), 'university': $("#affiliation").val().replace("\n", " ")};
+        var x = {position: $("#position").val(), nom: $("#name").val().replace("\n", " "), email: $("#email").val().replace("\n", " "), phone: $("#phone").val().replace("\n", " "), country: $("#country").val().replace("\n", " "),address: $("#address").val().replace("\n", " "), zip: $("#zip").val(), university: $("#affiliation").val().replace("\n", " ")};
         console.log(JSON.stringify(x));
         $.ajax({
             url: "/app",
