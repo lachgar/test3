@@ -6,7 +6,6 @@ var csv = require('fast-csv')
 
 app.get('/app', function (req, res) {
     console.log(stringify(req.query));
-    res.send('Hello World!');
     var rows = [req.query];
     var fs = require('fs');
     var csvWriter = require('csv-write-stream');
