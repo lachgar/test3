@@ -11,10 +11,10 @@ $(document).ready(function ()
     "use strict";
 
     $("#send").click(function () {
-        var x = {'position': $("#position").val(), 'nom': $("#name").val(), 'email': $("#email").val(), 'phone': $("#phone").val(), 'country': $("#country").val(),'address': $("#address").val(), 'zip': $("#zip").val(), 'university': $("#affiliation").val()};
+        var x = {'position': $("#position").val(), 'nom': $("#name").val().replace("\n", " "), 'email': $("#email").val().replace("\n", " "), 'phone': $("#phone").val().replace("\n", " "), 'country': $("#country").val().replace("\n", " "),'address': $("#address").val().replace("\n", " "), 'zip': $("#zip").val(), 'university': $("#affiliation").val().replace("\n", " ")};
         console.log(JSON.stringify(x));
         $.ajax({
-            url: "http://localhost:3000/",
+            url: "/app",
             dataType : 'json',
             contentType : "application/json",
             type: 'GET',
