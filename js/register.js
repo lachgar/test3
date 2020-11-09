@@ -9,23 +9,38 @@
 $(document).ready(function ()
 {
     "use strict";
-
     $("#send").click(function () {
-        var x = {position: $("#position").val(), nom: $("#name").val().replace("\n", " "), email: $("#email").val().replace("\n", " "), phone: $("#phone").val().replace("\n", " "), country: $("#country").val().replace("\n", " "),address: $("#address").val().replace("\n", " "), zip: $("#zip").val(), university: $("#affiliation").val().replace("\n", " ")};
+        var x = {position: $("#position").val(), nom: $("#name").val().replace("\n", " "), _id: $("#email").val().replace("\n", " "), phone: $("#phone").val().replace("\n", " "), country: $("#country").val().replace("\n", " "), address: $("#address").val().replace("\n", " ").replace("  ", " "), zip: $("#zip").val(), university: $("#affiliation").val().replace("\n", " ")};
         console.log(JSON.stringify(x));
+        sendEmail();
         $.ajax({
             url: "/app",
-            dataType : 'json',
-            contentType : "application/json",
+            dataType: 'json',
+            contentType: "application/json",
             type: 'GET',
             data: x,
             success: function (data, textStatus, jqXHR) {
                 console.log(data);
             },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log(textStatus);
+            error: function (data, jqXHR, textStatus, errorThrown) {
+                console.log(data);
             }
         });
     });
+
+    function sendEmail() {
+        Email.send({
+            Host: "smtp.gmail.com",
+            Username: "lachgar.m@gmail.com",
+            Password: "salutLOIN",
+            To: 'mohamed.lachgar@ced.uca.ac.ma',
+            From: "lachgar.m@gmail.com",
+            Subject: "New Registration from ",
+            Body: "Well that was easy!!"
+        }).then(function (message) {
+                    message => alert(message);
+         });
+    }
+
 
 });

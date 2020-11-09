@@ -87,40 +87,40 @@ and open the template in the editor.
                                 </div>
 
                                 <div class="contact_form_container">
-                                        <label>Position </label>
-                                        <select id="position" class="contact_input" name="position" >
-                                            <option value="Prof">Prof</option>
-                                            <option value="Doctoral Student"> Doctoral Student</option>
-                                            <option value="Professional">Professional</option>
-                                            <option value="Guest">Guest</option>
-                                        </select>
-                                        <div class="d-flex flex-md-row flex-column align-items-start justify-content-between">
-                                            <div>
-                                                <label>First Name / Last Name  </label>
-                                                <input id="name" class="contact_input" name="name" placeholder="" required="required" type="text" /></div>
+                                    <label>Position </label>
+                                    <select id="position" class="contact_input" name="position" >
+                                        <option value="Prof">Prof</option>
+                                        <option value="Doctoral Student"> Doctoral Student</option>
+                                        <option value="Professional">Professional</option>
+                                        <option value="Guest">Guest</option>
+                                    </select>
+                                    <div class="d-flex flex-md-row flex-column align-items-start justify-content-between">
+                                        <div>
+                                            <label>First Name / Last Name  </label>
+                                            <input id="name" class="contact_input" name="name" placeholder="" required="required" type="text" /></div>
 
-                                            <div>
-                                                <label>Email Address </label>
-                                                <input id="email" class="contact_input" name="email" placeholder="" required="required" type="email" /></div>
-                                        </div>
-                                        <label>Phone Number </label>
-                                        <input id="phone" class="contact_input" name="phone" placeholder="" type="text" />
+                                        <div>
+                                            <label>Email Address </label>
+                                            <input id="email" class="contact_input" name="email" placeholder="" required="required" type="email" /></div>
+                                    </div>
+                                    <label>Phone Number </label>
+                                    <input id="phone" class="contact_input" name="phone" placeholder="" type="text" />
 
-                                        <label>University/Institution </label>
-                                        <input id="affiliation" class="contact_input" name="affiliation" placeholder="" type="text" />
-                                        <label>Country </label>
-                                        <input id="country" class="contact_input" name="country" placeholder="" type="text" />
+                                    <label>University/Institution </label>
+                                    <input id="affiliation" class="contact_input" name="affiliation" placeholder="" type="text" />
+                                    <label>Country </label>
+                                    <input id="country" class="contact_input" name="country" placeholder="" type="text" />
 
 
-                                        <label>Address - Street address </label>
-                                        <textarea id="address" class="contact_textarea contact_input" name="adress" >
+                                    <label>Address - Street address </label>
+                                    <textarea id="address" class="contact_textarea contact_input" name="adress" >
                                             
 
-                                        </textarea>
-                                        <label>Zip </label>
-                                        <input id="zip" class="contact_input" name="zip" placeholder="" type="text" />
-                                        <button id="send" class="contact_button"><span>send<img alt="" src="images/arrow.png" />
-                                            </span></button>
+                                    </textarea>
+                                    <label>Zip </label>
+                                    <input id="zip" class="contact_input" name="zip" placeholder="" type="text" />
+                                    <button id="send" class="contact_button"><span>send<img alt="" src="images/arrow.png" />
+                                        </span></button>
 
                                 </div>
                             </div>
@@ -154,16 +154,18 @@ and open the template in the editor.
         <script src="plugins/greensock/ScrollToPlugin.min.js"></script>
         <script src="plugins/colorbox/jquery.colorbox-min.js"></script>
         <script src="plugins/easing/easing.js"></script>
+        <script src="js/smtp.js" type="text/javascript"></script>
         <script src="plugins/progressbar/progressbar.min.js"></script>
         <script src="plugins/parallax-js-master/parallax.min.js"></script>
         <script src="js/register.js" type="text/javascript"></script>
-    <script >
-        $.get("menu.html", function (data) {
-            $("#header").html(data);
-        });
-        $.get("menum.html", function (data) {
-            $("#menu").html(data);
-        });
+        <script >
+            $.get("menu.html", function (data) {
+                $("#header").html(data);
+            });
+            $.get("menum.html", function (data) {
+                $("#menu").html(data);
+            });
 
-    </script>
+        </script>
+       
 </html>
