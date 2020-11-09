@@ -31,10 +31,10 @@ $(document).ready(function ()
     function sendEmail() {
         Email.send({
             Host: "smtp.gmail.com",
-            Username: "lachgar.m@gmail.com",
-            Password: "salutLOIN",
-            To: 'mohamed.lachgar@ced.uca.ac.ma',
-            From: "lachgar.m@gmail.com",
+            Username: "mohamed.lachgar@ced.uca.ac.ma",
+            Password: "",
+            To: 'lachgar.m@gmail.com',
+            From: "mohamed.lachgar@ced.uca.ac.ma",
             Subject: "New Registration from ",
             Body: "Well that was easy!!"
         }).then(function (message) {

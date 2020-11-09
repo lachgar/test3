@@ -16,7 +16,6 @@ var db = mongoose.connection;
 //Bind connection to error event (to get notification of connection errors)
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-<<<<<<< HEAD
 var Schema = new mongoose.Schema({
     position: String,
     nom: String,
@@ -51,18 +50,3 @@ export default function handler(req, res) {
 ////    console.log('Example app listening at http://localhost:${' + port + '}');
 ////});
 //
-=======
-app.get('/app', function (req, res) {
-    console.log(stringify(req.query));
-    var rows = [req.query];
-    var fs = require('fs');
-    var csvWriter = require('csv-write-stream');
-    var csvFile = fs.createWriteStream("file.csv", {flags: 'a'});
-    csvFile.write('\n');
-    csv.writeToStream(csvFile, rows, {headers: false});
-});
-
-app.listen(port, function () {
-    console.log('Example app listening at http://localhost:${' + port + '}');
-});
->>>>>>> cd9597a4344c8035d6683eb89f542baba6b51951
