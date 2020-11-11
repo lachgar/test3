@@ -9,12 +9,13 @@
 $(document).ready(function ()
 {
     "use strict";
+    
     $("#send").click(function () {
-        var x = {position: $("#position").val(), nom: $("#name").val().replace("\n", " "), _id: $("#email").val().replace("\n", " "), phone: $("#phone").val().replace("\n", " "), country: $("#country").val().replace("\n", " "), address: $("#address").val().replace("\n", " ").replace("  ", " "), zip: $("#zip").val(), university: $("#affiliation").val().replace("\n", " ")};
+        var x = {Position: $("#position").val(), Name: $("#name").val().replace("\n", " "), Email: $("#email").val().replace("\n", " "), Phone: $("#phone").val().replace("\n", " "), Country: $("#country").val().replace("\n", " "), Address: $("#address").val().replace("\n", " ").replace("  ", " "), Zip: $("#zip").val(), University: $("#affiliation").val().replace("\n", " ")};
         console.log(JSON.stringify(x));
         sendEmail();
         $.ajax({
-            url: "/app",
+            url: "https://script.google.com/macros/s/AKfycbxP7rlcMo1OXWMm8rq42I5t3_P5syrTicFUJKR7saPa3EzHdvM/exec",
             dataType: 'json',
             contentType: "application/json",
             type: 'GET',
@@ -26,7 +27,7 @@ $(document).ready(function ()
                 console.log(data);
             }
         });
-    });
+    }); 
 
     function sendEmail() {
         Email.send({
