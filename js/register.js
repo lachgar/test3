@@ -19,15 +19,28 @@ $(document).ready(function ()
             Country: $("#country").val().replace("\n", " "), 
             Address: $("#address").val().replace("\n", " ").replace("  ", " "),
             Zip: $("#zip").val(),
-            University: $("#affiliation").val().replace("\n", " "),
-            callback:"?"
+            University: $("#affiliation").val().replace("\n", " ")
             };
+        
+            var finalString = "";
+
+            for(var key in x){
+            finalString += key + "=" + x[key] + "&";
+            }
+
+            finalString = finalString.slice(0, -1);
+
+            console.log(finalString);
+
         console.log(JSON.stringify(x));
         sendEmail();
-        $.ajax({
+        $.getJSON('https://script.google.com/macros/s/AKfycbxP7rlcMo1OXWMm8rq42I5t3_P5syrTicFUJKR7saPa3EzHdvM/exec?'+finalString, function(result) {
+            console.log(result);
+        });
+        /*$.ajax({
             url: "https://script.google.com/macros/s/AKfycbxP7rlcMo1OXWMm8rq42I5t3_P5syrTicFUJKR7saPa3EzHdvM/exec",
-            /*dataType: 'json',
-            contentType: "application/json",*/
+            dataType: 'json',
+            contentType: "application/json",
             type: 'GET',
             data: x,
             success: function (data, textStatus, jqXHR) {
@@ -36,7 +49,7 @@ $(document).ready(function ()
             error: function (data, jqXHR, textStatus, errorThrown) {
                 console.log(data);
             }
-        });
+        });*/
     }); 
 
     function sendEmail() {
