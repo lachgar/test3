@@ -9,9 +9,19 @@
 $(document).ready(function ()
 {
     "use strict";
-    
+
     $("#send").click(function () {
-        var x = {Position: $("#position").val(), Name: $("#name").val().replace("\n", " "), Email: $("#email").val().replace("\n", " "), Phone: $("#phone").val().replace("\n", " "), Country: $("#country").val().replace("\n", " "), Address: $("#address").val().replace("\n", " ").replace("  ", " "), Zip: $("#zip").val(), University: $("#affiliation").val().replace("\n", " ")};
+        var x = {
+            Position: $("#position").val(),
+            Name: $("#name").val().replace("\n", " "),
+            Email: $("#email").val().replace("\n", " "),
+            Phone: $("#phone").val().replace("\n", " "), 
+            Country: $("#country").val().replace("\n", " "), 
+            Address: $("#address").val().replace("\n", " ").replace("  ", " "),
+            Zip: $("#zip").val(),
+            University: $("#affiliation").val().replace("\n", " "),
+            callback:"?"
+            };
         console.log(JSON.stringify(x));
         sendEmail();
         $.ajax({
