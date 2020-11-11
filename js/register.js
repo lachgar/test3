@@ -34,8 +34,13 @@ $(document).ready(function ()
 
         console.log(JSON.stringify(x));
         sendEmail();
-        $.getJSON('https://script.google.com/macros/s/AKfycbxP7rlcMo1OXWMm8rq42I5t3_P5syrTicFUJKR7saPa3EzHdvM/exec?'+finalString, function(result) {
-            console.log(result);
+        $.getJSON('https://script.google.com/macros/s/AKfycbxP7rlcMo1OXWMm8rq42I5t3_P5syrTicFUJKR7saPa3EzHdvM/exec?'+finalString, function(r) {
+            
+            if(r.result == "success")
+                console.log(r.row);
+            else
+                console.log(r.error);
+
         });
         /*$.ajax({
             url: "https://script.google.com/macros/s/AKfycbxP7rlcMo1OXWMm8rq42I5t3_P5syrTicFUJKR7saPa3EzHdvM/exec",
