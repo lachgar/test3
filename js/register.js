@@ -33,6 +33,13 @@ $(document).ready(function () {
             $.getJSON('https://script.google.com/macros/s/AKfycbxP7rlcMo1OXWMm8rq42I5t3_P5syrTicFUJKR7saPa3EzHdvM/exec?' + finalString, function (r) {
                 if (r.result == "success") {
                     alert("Registration is successful, welcome to menacis'2020");
+                    $("#position").val("Prof"); 
+                    $("#name").val(""); 
+                    $("#email").val(""); 
+                    $("#phone").val(""); 
+                    $("#country").val(""); 
+                    $("#zip").val("");
+                    $("#affiliation").val("");
                     console.log(r.row);
                 } else {
                     alert("Registration failed")
