@@ -26,8 +26,8 @@ $(document).ready(function ()
         sendEmail();
         $.ajax({
             url: "https://script.google.com/macros/s/AKfycbxP7rlcMo1OXWMm8rq42I5t3_P5syrTicFUJKR7saPa3EzHdvM/exec",
-            dataType: 'json',
-            contentType: "application/json",
+            /*dataType: 'json',
+            contentType: "application/json",*/
             type: 'GET',
             data: x,
             success: function (data, textStatus, jqXHR) {
