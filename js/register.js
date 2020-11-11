@@ -6,8 +6,7 @@
 
 
 
-$(document).ready(function ()
-{
+$(document).ready(function () {
     "use strict";
 
     $("#send").click(function () {
@@ -15,32 +14,27 @@ $(document).ready(function ()
             Position: $("#position").val(),
             Name: $("#name").val().replace("\n", " "),
             Email: $("#email").val().replace("\n", " "),
-            Phone: $("#phone").val().replace("\n", " "), 
-            Country: $("#country").val().replace("\n", " "), 
+            Phone: $("#phone").val().replace("\n", " "),
+            Country: $("#country").val().replace("\n", " "),
             Address: $("#address").val().replace("\n", " ").replace("  ", " "),
             Zip: $("#zip").val(),
             University: $("#affiliation").val().replace("\n", " ")
-            };
-        
-            var finalString = "";
+        };
 
-            for(var key in x){
+        var finalString = "";
+
+        for (var key in x) {
             finalString += key + "=" + x[key] + "&";
-            }
-
-            finalString = finalString.slice(0, -1);
-
-            console.log(finalString);
-
+        }
+        finalString = finalString.slice(0, -1);
+        console.log(finalString);
         console.log(JSON.stringify(x));
         sendEmail();
-        $.getJSON('https://script.google.com/macros/s/AKfycbxP7rlcMo1OXWMm8rq42I5t3_P5syrTicFUJKR7saPa3EzHdvM/exec?'+finalString, function(r) {
-            
-            if(r.result == "success")
+        $.getJSON('https://script.google.com/macros/s/AKfycbxP7rlcMo1OXWMm8rq42I5t3_P5syrTicFUJKR7saPa3EzHdvM/exec?' + finalString, function (r) {
+            if (r.result == "success")
                 console.log(r.row);
             else
                 console.log(r.error);
-
         });
         /*$.ajax({
             url: "https://script.google.com/macros/s/AKfycbxP7rlcMo1OXWMm8rq42I5t3_P5syrTicFUJKR7saPa3EzHdvM/exec",
@@ -55,7 +49,7 @@ $(document).ready(function ()
                 console.log(data);
             }
         });*/
-    }); 
+    });
 
     function sendEmail() {
         Email.send({
@@ -67,8 +61,8 @@ $(document).ready(function ()
             Subject: "New Registration from ",
             Body: "Well that was easy!!"
         }).then(function (message) {
-                    message => alert(message);
-         });
+            message => alert(message);
+        });
     }
 
 
