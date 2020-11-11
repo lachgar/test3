@@ -20,21 +20,22 @@ $(document).ready(function () {
             Zip: $("#zip").val(),
             University: $("#affiliation").val().replace("\n", " ")
         };
-
         var finalString = "";
-
         for (var key in x) {
             finalString += key + "=" + x[key] + "&";
         }
         finalString = finalString.slice(0, -1);
         console.log(finalString);
         console.log(JSON.stringify(x));
-        sendEmail();
+        //sendEmail();
         $.getJSON('https://script.google.com/macros/s/AKfycbxP7rlcMo1OXWMm8rq42I5t3_P5syrTicFUJKR7saPa3EzHdvM/exec?' + finalString, function (r) {
-            if (r.result == "success")
+            if (r.result == "success"){
+                alert("Registration is successful, welcome to menacis'2020");
                 console.log(r.row);
-            else
+            }else{
+                alert("Registration failed")
                 console.log(r.error);
+            }
         });
         /*$.ajax({
             url: "https://script.google.com/macros/s/AKfycbxP7rlcMo1OXWMm8rq42I5t3_P5syrTicFUJKR7saPa3EzHdvM/exec",
