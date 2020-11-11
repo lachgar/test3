@@ -10,33 +10,38 @@ $(document).ready(function () {
     "use strict";
 
     $("#send").click(function () {
-        var x = {
-            Position: $("#position").val(),
-            Name: $("#name").val().replace("\n", " "),
-            Email: $("#email").val().replace("\n", " "),
-            Phone: $("#phone").val().replace("\n", " "),
-            Country: $("#country").val().replace("\n", " "),
-            Address: $("#address").val().replace("\n", " ").replace("  ", " "),
-            Zip: $("#zip").val(),
-            University: $("#affiliation").val().replace("\n", " ")
-        };
-        var finalString = "";
-        for (var key in x) {
-            finalString += key + "=" + x[key] + "&";
-        }
-        finalString = finalString.slice(0, -1);
-        console.log(finalString);
-        console.log(JSON.stringify(x));
-        //sendEmail();
-        $.getJSON('https://script.google.com/macros/s/AKfycbxP7rlcMo1OXWMm8rq42I5t3_P5syrTicFUJKR7saPa3EzHdvM/exec?' + finalString, function (r) {
-            if (r.result == "success"){
-                alert("Registration is successful, welcome to menacis'2020");
-                console.log(r.row);
-            }else{
-                alert("Registration failed")
-                console.log(r.error);
+        if ($("#position").val() && $("#name").val() && $("#email").val() && $("#phone").val() && $("#country").val() && $("#zip").val() && $("#affiliation").val()) {
+            var x = {
+                Position: $("#position").val(),
+                Name: $("#name").val().replace("\n", " "),
+                Email: $("#email").val().replace("\n", " "),
+                Phone: $("#phone").val().replace("\n", " "),
+                Country: $("#country").val().replace("\n", " "),
+                Address: $("#address").val().replace("\n", " ").replace("  ", " "),
+                Zip: $("#zip").val(),
+                University: $("#affiliation").val().replace("\n", " ")
+            };
+            var finalString = "";
+            for (var key in x) {
+                finalString += key + "=" + x[key] + "&";
             }
-        });
+            finalString = finalString.slice(0, -1);
+            console.log(finalString);
+            console.log(JSON.stringify(x));
+            //sendEmail();
+
+            $.getJSON('https://script.google.com/macros/s/AKfycbxP7rlcMo1OXWMm8rq42I5t3_P5syrTicFUJKR7saPa3EzHdvM/exec?' + finalString, function (r) {
+                if (r.result == "success") {
+                    alert("Registration is successful, welcome to menacis'2020");
+                    console.log(r.row);
+                } else {
+                    alert("Registration failed")
+                    console.log(r.error);
+                }
+            });
+        } else {
+            alert("Please complete all fields");
+        }
         /*$.ajax({
             url: "https://script.google.com/macros/s/AKfycbxP7rlcMo1OXWMm8rq42I5t3_P5syrTicFUJKR7saPa3EzHdvM/exec",
             dataType: 'json',
