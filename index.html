@@ -1000,6 +1000,23 @@
                                                 });
                                                 $.get("menum.html", function (data) {
                                                     $("#menu").html(data);
+                                                   if ($('.menu').length && $('.hamburger').length)
+                                                        {
+                                                            var menu = $('.menu');
+                                                            var hamburger = $('.hamburger');
+                                                            var close = $('.menu_close');
+
+                                                            hamburger.on('click', function ()
+                                                            {
+                                                                console.log('clicked  menu');
+                                                                menu.toggleClass('active');
+                                                            });
+
+                                                            close.on('click', function ()
+                                                            {
+                                                                menu.toggleClass('active');
+                                                            });
+                                                        }
                                                 });
 
 

@@ -85,6 +85,7 @@ $(document).ready(function ()
 
             hamburger.on('click', function ()
             {
+                console.log('clicked  menu');
                 menu.toggleClass('active');
             });
 
