@@ -1013,7 +1013,10 @@
                                                 });
                                                 $.get("menum.html", function (data) {
                                                     $("#menu").html(data);
-                                                   if ($('.menu').length && $('.hamburger').length)
+                                                });
+                                                
+                                                $('.menu').on('DOMNodeInserted', function(e) {
+                                                        if ($('.menu').length && $('.hamburger').length)
                                                         {
                                                             var menu = $('.menu');
                                                             var hamburger = $('.hamburger');
@@ -1021,16 +1024,17 @@
 
                                                             hamburger.on('click', function ()
                                                             {
-                                                                console.log('clicked  menu');
+                                                                console.log('clicked  menu',close);
                                                                 menu.toggleClass('active');
                                                             });
 
                                                             close.on('click', function ()
                                                             {
+                                                                console.log("thanks");
                                                                 menu.toggleClass('active');
                                                             });
                                                         }
-                                                });
+                                                    });
 
 
                                                 function myFunction(dots, more, btn) {

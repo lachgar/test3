@@ -33,6 +33,7 @@ $(document).ready(function ()
     initTimer();
     initTabs();
     initGallery();
+    
 
     $(window).on('resize', function ()
     {
