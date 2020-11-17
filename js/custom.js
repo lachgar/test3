@@ -33,6 +33,7 @@ $(document).ready(function ()
     initTimer();
     initTabs();
     initGallery();
+    
 
     $(window).on('resize', function ()
     {
@@ -85,6 +86,7 @@ $(document).ready(function ()
 
             hamburger.on('click', function ()
             {
+                console.log('clicked  menu');
                 menu.toggleClass('active');
             });
 
