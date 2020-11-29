@@ -152,9 +152,6 @@
 		padding-left: 20px;
 		padding-right: 20px;
 	}
-        .tab:nth-child(n) {
-            width: 100%;
-        }
 	.tab_col
 	{
 		margin-top: 60px;

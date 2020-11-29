@@ -965,6 +965,7 @@ section
 .schedule_content
 {
 	padding-left: 60px;
+        width: 100%;
 }
 .schedule_time
 {
