@@ -430,7 +430,7 @@
     {
         width: 100%;
         height: 70px;
-        font-size: 10px;
+        //font-size: 10px;
     }
     .zoom:hover {
         -ms-transform: scale(4); /* IE 9 */
