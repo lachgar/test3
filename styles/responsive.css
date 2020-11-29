@@ -151,6 +151,7 @@
 		flex-grow: 0;
 		padding-left: 20px;
 		padding-right: 20px;
+                width: 100%;
 	}
 	.tab_col
 	{
@@ -341,6 +342,14 @@
 	{
 		font-size: 16px;
 	}
+        .tab
+	{
+		-webkit-flex-grow: 0;
+		flex-grow: 0;
+		padding-left: 20px;
+		padding-right: 20px;
+                width: 100%;
+	}
 }
 
 /************
@@ -367,6 +376,15 @@
 
 @media only screen and (max-width: 479px)
 {
+    .tab
+	{
+		-webkit-flex-grow: 0;
+		flex-grow: 0;
+		padding-left: 20px;
+		padding-right: 20px;
+                width: 100%;
+                font-size: 9px;
+	}
 	
 }
 
@@ -379,5 +397,13 @@
 	.home_title h1 span
 	{
 		font-size: 34px;
+	}
+        .tab
+	{
+		-webkit-flex-grow: 0;
+		flex-grow: 0;
+		padding-left: 20px;
+		padding-right: 20px;
+                width: 100%;
 	}
 }
