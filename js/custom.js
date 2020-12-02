@@ -33,7 +33,7 @@ $(document).ready(function ()
     initTimer();
     initTabs();
     initGallery();
-    
+
 
     $(window).on('resize', function ()
     {
@@ -156,6 +156,7 @@ $(document).ready(function ()
 //            date.setDate(target_date);
 //            var target_date = date.getTime();
 
+
             var confDate = new Date();
             confDate.setMilliseconds(1606950000000);
             var crrDate = new Date();
@@ -176,22 +177,27 @@ $(document).ready(function ()
                 var current_date = new Date().getTime();
                 var seconds_left = (target_date - current_date) / 1000;
 
-                // do some time calculations
-                days = parseInt(seconds_left / 86400);
-                seconds_left = seconds_left % 86400;
+                if (target_date - current_date <= 0) {
+                    $('.timer_container').hide();
+                    exit();
+                } else {
+                    // do some time calculations
+                    days = parseInt(seconds_left / 86400);
+                    seconds_left = seconds_left % 86400;
 
-                hours = parseInt(seconds_left / 3600);
-                seconds_left = seconds_left % 3600;
+                    hours = parseInt(seconds_left / 3600);
+                    seconds_left = seconds_left % 3600;
 
-                minutes = parseInt(seconds_left / 60);
-                seconds = parseInt(seconds_left % 60);
+                    minutes = parseInt(seconds_left / 60);
+                    seconds = parseInt(seconds_left % 60);
 
-                // display result
-                d.text(days);
-                h.text(hours);
-                m.text(minutes);
-                s.text(seconds);
+                    // display result
+                    d.text(days);
+                    h.text(hours);
+                    m.text(minutes);
+                    s.text(seconds);
 
+                }
             }, 1000);
         }
     }
