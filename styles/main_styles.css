@@ -54,7 +54,6 @@ div
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    width: 100%;
 }
 ul
 {
@@ -1039,7 +1038,7 @@ section
     background: #f5f8fb;
     -webkit-flex-grow: 1;
     flex-grow: 1;
-    font-size: 14px;
+    font-size: 13px;
     color: #0a2642;
     font-weight: 500;
     line-height: 57px;
@@ -1069,8 +1068,8 @@ section
 }
 .tab_panels
 {
-    padding-top: 5px;
-    padding-bottom: 20px;
+    padding-top: 2px;
+    padding-bottom: 3px;
 }
 .tab_panel
 {
@@ -1155,7 +1154,6 @@ section
     text-align: center;
     margin-top: 15px;
 }
-
 
 
 .picMem div div {
